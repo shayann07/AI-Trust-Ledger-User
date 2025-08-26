@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="amountTV" type="id" />
+    <item name="item_card_stock_investment" type="id" />
+    <item name="Item_card_medicine_investment" type="id" />
+    <item name="Item_card_forex_investment" type="id" />
+</resources>

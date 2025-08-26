@@ -1,0 +1,33 @@
+package com.trustledger.aitrustledger.ui.viewModels
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.trustledger.aitrustledger.data.repository.AccountRepository
+import com.trustledger.aitrustledger.models.AccountModel
+import com.trustledger.aitrustledger.models.AnnouncementModel
+
+class AccountViewModel : ViewModel() {
+    private val repository = AccountRepository()
+    private val _announcementLiveData = MutableLiveData<List<AnnouncementModel>?>()
+    // Expose it as LiveData
+    val announcementLiveData: LiveData<List<AnnouncementModel>?> get() = _announcementLiveData
+    private val _announcementImageUrls = MutableLiveData<List<String>?>()
+    val announcementImageUrls: LiveData<List<String>?> get() = _announcementImageUrls
+
+    var hasShownAnnouncement = false
+
+    fun getAccount(uId: String): LiveData<AccountModel?> {
+        return repository.getAccount(uId)
+    }
+    fun getAnnouncements() {
+        repository.getAnnouncements { announcements ->
+            _announcementLiveData.postValue(announcements)
+        }
+    }
+    fun getAnnouncementImageUrls() {
+        repository.getAnnouncementImageUrls { urls ->
+            _announcementImageUrls.postValue(urls)
+        }
+    }
+}
