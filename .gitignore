@@ -12,3 +12,8 @@ captures/
 *.keystore
 local.properties
 app/google-services.json
+
+.gsd/
+expressions.txt
+replacements.txt
+
