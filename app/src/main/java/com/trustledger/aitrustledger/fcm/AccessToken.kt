@@ -28,7 +28,7 @@ class AccessToken {
                 {
   "type": "service_account",
   "project_id": "aitrustledger-3fe07",
-  "private_key_id": "e8f8b87794fa08a7b62a51fadfd12ed0f0f75c04",
+  "private_key_id": "YOUR_PRIVATE_KEY_ID",
   "private_key": "YOUR_PRIVATE_KEY",
   "client_email": "firebase-adminsdk-fbsvc@aitrustledger-3fe07.iam.gserviceaccount.com",
   "client_id": "111587825525969513663",
